@@ -1,9 +1,9 @@
 {
-  "name": "ease",
+  "name": "easing",
   "version": "0.0.0",
   "description": "demo for easing functions",
   "author": "semibran (Brandon Semilla)",
-  "repository": "semibran/ease",
+  "repository": "semibran/easing",
   "license": "MIT",
   "main": "src/index.js",
   "keywords": [],
