@@ -3,6 +3,6 @@ a comprehensive listing of easing functions (e.g. quadratic, exponential, circul
 
 [view it live][demo]
 
-[[easing demo](./demo.gif)][demo]
+[![easing demo](./demo.gif)][demo]
 
 [demo]: https://semibran.github.io/demo
