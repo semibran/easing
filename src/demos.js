@@ -6,69 +6,75 @@ import * as circular from "../lib/circular"
 
 export default [
 	{
+		fn: t => t,
 		title: "linear",
-		formula: "t",
-		fn: t => t
+		formula: "t"
 	},
 	{
+		fn: quadratic.easeIn,
 		title: "quadratic ease in",
-		formula: "t * t",
-		fn: quadratic.easeIn
+		formula: "t * t"
 	},
 	{
+		fn: quadratic.easeOut,
 		title: "quadratic ease out",
-		formula: "-t * (t - 2)",
-		fn: quadratic.easeOut
+		formula: "-t * (t - 2)"
 	},
 	{
+		fn: quadratic.easeInOut,
 		title: "quadratic ease in/out",
-		formula: "t < 0.5 ? t * t * 2 : -((t = t * 2 - 1) * (t - 2) - 1) / 2",
-		fn: quadratic.easeInOut
+		formula: `t < 0.5
+  ? t * t * 2
+  : -((t = t * 2 - 1) * (t - 2) - 1) / 2`
 	},
 	{
+		fn: cubic.easeIn,
 		title: "cubic ease in",
-		formula: "t * t * t",
-		fn: cubic.easeIn
+		formula: "t^3"
 	},
 	{
+		fn: cubic.easeOut,
 		title: "cubic ease out",
-		formula: "--t * t * t + 1",
-		fn: cubic.easeOut
+		formula: "(t - 1)^3 + 1"
 	},
 	{
+		fn: cubic.easeInOut,
 		title: "cubic ease in/out",
-		formula: "t < 0.5 ? t^3 * 4 : ((t * 2 - 2)^3 + 2) / 2",
-		fn: cubic.easeInOut
+		formula: `t < 0.5
+  ? t^3 * 4
+  : ((t * 2 - 2)^3 + 2) / 2`
 	},
 	{
+		fn: sinusoidal.easeIn,
 		title: "sinusoidal ease in",
-		formula: "cos(π + π / 2 * t) + 1",
-		fn: sinusoidal.easeIn
+		formula: "cos(π + π / 2 * t) + 1"
 	},
 	{
+		fn: sinusoidal.easeOut,
 		title: "sinusoidal ease out",
-		formula: "sin(π / 2 * t)",
-		fn: sinusoidal.easeOut
+		formula: "sin(π / 2 * t)"
 	},
 	{
+		fn: sinusoidal.easeInOut,
 		title: "sinusoidal ease in/out",
-		formula: "(cos(π + π * t) + 1) / 2",
-		fn: sinusoidal.easeInOut
+		formula: "(cos(π + π * t) + 1) / 2"
 	},
 	{
+		fn: exponential.easeIn,
 		title: "exponential ease in",
-		formula: "2 ^ (10 * (t - 1))",
-		fn: exponential.easeIn
+		formula: "2 ^ (10 * (t - 1))"
 	},
 	{
+		fn: exponential.easeOut,
 		title: "exponential ease out",
-		formula: "-(2 ^ (-10 * t)) + 1",
-		fn: exponential.easeOut
+		formula: "-(2 ^ (-10 * t)) + 1"
 	},
 	{
+		fn: exponential.easeInOut,
 		title: "exponential ease in/out",
-		formula: "(t = t * 2 - 1) < 0 ? 2 ^ (10 * t) / 2 : (-(2 ^ (-10 * t) + 2) / 2",
-		fn: exponential.easeInOut
+		formula: `(t = t * 2 - 1) < 0
+  ? 2 ^ (10 * t) / 2
+  : (-(2 ^ (-10 * t) + 2) / 2`
 	},
 	{
 		fn: circular.easeIn,

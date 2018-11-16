@@ -32,11 +32,16 @@ body {
 
 .demo .header {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
+	margin: 16px 0;
+}
+
+.demo canvas {
+	margin-top: 5px;
 }
 
 .demo .text {
-	margin: 16px;
+	margin: 0 16px;
 }
 
 .demo .title {
@@ -47,6 +52,7 @@ body {
 .demo .formula {
 	opacity: 0.66;
 	margin: 4px 2px;
+	white-space: pre;
 }
 
 .demo .slider {
