@@ -7,6 +7,30 @@ export default [
 		formula: "t"
 	},
 	{
+		title: "asymptotic ease in",
+		formula: "x += (1 - x) / e",
+		fn: t => {
+			let x = 0
+			for (let i = 0; i < t; i += 1 / 32) {
+				x += (1 - x) / 4
+			}
+			return x
+		}
+	},
+	{
+		title: "asymptotic ease in/out",
+		formula: "v += ((1 - x) / e1 - v) / e2\nx += v",
+		fn: t => {
+			let x = 0
+			let v = 0
+			for (let i = 0; i < t; i += 1 / 32) {
+				v += ((1 - x) / 12 - v) / 4
+				x += v
+			}
+			return x
+		}
+	},
+	{
 		fn: easing.quadratic.easeIn,
 		title: "quadratic ease in",
 		formula: "t * t"

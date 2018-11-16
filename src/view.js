@@ -17,7 +17,7 @@ export function render(view, state) {
 			let element =
 				div("demo", [
 					div("header", [
-						drawFn(32, demo.fn),
+						demo.fn ? drawFn(32, demo.fn) : null,
 						div("text", [
 							div("title", [ demo.title ]),
 							div("formula", [ demo.formula ])
@@ -43,7 +43,23 @@ export function render(view, state) {
 			t = (p - 180) / 120
 		}
 
-		let x = demo.fn(t)
+		let x = 0
+		if (demo.title === "asymptotic ease in") {
+			if (p % 180 === 0) demo.x = 0
+			demo.x += (1 - demo.x) / 24
+			x = demo.x
+		} else if (demo.title === "asymptotic ease in/out") {
+			if (p % 180 === 0) {
+				demo.x = 0
+				demo.v = 0
+			}
+			demo.v += ((1 - demo.x) / 32 - demo.v) / 8
+			demo.x += demo.v
+			x = demo.x
+		} else {
+			x = demo.fn(t)
+		}
+
 		if (p >= 180) {
 			x = 1 - x
 		}
