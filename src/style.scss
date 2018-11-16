@@ -7,6 +7,7 @@ $color-bg: #1c4d98;
 }
 
 html, body {
+	width: 100%;
 	height: 100%;
 }
 
@@ -14,13 +15,12 @@ body {
 	background: $color-bg;
 	color: white;
 	font-family: monospace;
-	display: flex;
-	justify-content: center;
 }
 
 .wrap {
 	position: relative;
 	padding: 64px 0;
+	margin: 0 auto;
 	width: 80%;
 	max-width: 768px;
 }
@@ -95,4 +95,14 @@ body {
 	border: 2px solid white;
 	border-radius: 50%;
 	transform: translateX(-50%);
+}
+
+@media screen and (max-width: 420px) {
+	.demo .title {
+		font-size: 1rem;
+	}
+
+	.demo canvas {
+		margin-top: 2px;
+	}
 }
