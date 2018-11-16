@@ -1,5 +1,6 @@
 import * as View from "./view"
 import * as quadratic from "../lib/quadratic"
+import * as cubic from "../lib/cubic"
 import * as sinusoidal from "../lib/sinusoidal"
 
 let state = {
@@ -22,8 +23,23 @@ let state = {
 		},
 		{
 			title: "quadratic ease in/out",
-			formula: "t < 0.5 ? t * t * 2 : -((t * 2 - 1) * (t * 2 - 3) - 1) / 2",
+			formula: "t < 0.5 ? t * t * 2 : -((t = t * 2 - 1) * (t - 2) - 1) / 2",
 			fn: quadratic.easeInOut
+		},
+		{
+			title: "cubic ease in",
+			formula: "t * t * t",
+			fn: cubic.easeIn
+		},
+		{
+			title: "cubic ease out",
+			formula: "--t * t * t + 1",
+			fn: cubic.easeOut
+		},
+		{
+			title: "cubic ease in/out",
+			formula: "t < 0.5 ? t * t * t * 4 : ((t = t * 2 - 2) * t * t + 2) / 2",
+			fn: cubic.easeInOut
 		},
 		{
 			title: "sinusoidal ease in",
