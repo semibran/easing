@@ -2,6 +2,7 @@ import * as View from "./view"
 import * as quadratic from "../lib/quadratic"
 import * as cubic from "../lib/cubic"
 import * as sinusoidal from "../lib/sinusoidal"
+import * as exponential from "../lib/exponential"
 
 let state = {
 	time: 0,
@@ -55,7 +56,22 @@ let state = {
 			title: "sinusoidal ease in/out",
 			formula: "(cos(π + π * t) + 1) / 2",
 			fn: sinusoidal.easeInOut
-		}
+		},
+		{
+			title: "exponential ease in",
+			formula: "2 ^ (10 * (t - 1))",
+			fn: exponential.easeIn
+		},
+		{
+			title: "exponential ease out",
+			formula: "-(2 ^ (-10 * t)) + 1",
+			fn: exponential.easeOut
+		},
+		{
+			title: "exponential ease in/out",
+			formula: "(t = t * 2 - 1) < 0 ? 2 ^ (10 * t) / 2 : (-(2 ^ (-10 * t) + 2) / 2",
+			fn: exponential.easeInOut
+		},
 	]
 }
 
